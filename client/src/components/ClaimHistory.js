@@ -3,7 +3,7 @@ import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 
 const ClaimHistory = ({ claims, claimPage, setClaimPage, claimTotalPages }) => {
   return (
-    <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 max-w-full rounded shadow shadow-xl p-5">
+    <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 max-w-full rounded shadow shadow-xl p-5 bg-white-50">
       <h2 className="text-lg underline">Claim History</h2>
       <table className="table-auto w-full">
         <thead>
@@ -18,22 +18,22 @@ const ClaimHistory = ({ claims, claimPage, setClaimPage, claimTotalPages }) => {
           {claims.map((claim) => (
             <tr key={claim._id}>
               <td>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center my-1">
                   {claim.ip}
                 </div>
               </td>
               <td>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center my-1">
                   {claim.cookieId}
                 </div>
               </td>
               <td>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center my-1">
                   {claim.couponId.code}
                 </div>
               </td>
               <td>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center my-1">
                   {new Date(claim.timestamp).toLocaleString()}
                 </div>
               </td>

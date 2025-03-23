@@ -59,17 +59,17 @@ const AdminPanel = () => {
   return (
     <div className="admin-panel flex flex-col gap-5 items-center justify-center min-h-screen bg-blue-50 pt-5">
       <h1 className="text-2xl underline">Admin Panel</h1>
-      <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 rounded shadow shadow-xl p-5">
+      <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 rounded shadow shadow-xl p-5 bg-white-50">
         <div className="flex gap-5">
           <button
             onClick={logout}
-            className="border-1 px-4 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-300 hover:scale-110 hover:bg-blue-400"
+            className="border-1 px-4 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-400 hover:scale-110 hover:bg-blue-300"
           >
             Logout
           </button>
           <button
             onClick={fetchData}
-            className="border-1 px-4 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-300 hover:scale-110 hover:bg-blue-400"
+            className="border-1 px-4 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-400 hover:scale-110 hover:bg-blue-300"
           >
             Refresh
           </button>

@@ -54,7 +54,7 @@ const ViewCoupon = ({
   };
 
   return (
-    <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 max-w-full rounded shadow shadow-xl p-5">
+    <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 max-w-full rounded shadow shadow-xl p-5 bg-white-50">
       <h2 className="text-lg underline">Coupons</h2>
       <table className="table-auto w-full">
         <thead>
@@ -71,7 +71,7 @@ const ViewCoupon = ({
               <td>
                 <div className="flex items-center justify-center">
                   <input
-                    className="border-1 px-2 py-1 rounded shadow shadow-lg focus:scale-105"
+                    className="border-1 px-2 py-1 rounded shadow shadow-lg focus:scale-105 my-1"
                     defaultValue={coupon.code}
                     onBlur={(e) =>
                       handleUpdateCoupon(coupon._id, e.target.value)
@@ -79,13 +79,13 @@ const ViewCoupon = ({
                   />
                 </div>
               </td>
-              <td className="flex items-center justify-center">
+              <td className="flex items-center justify-center my-1">
                 {coupon.isClaimed ? "Yes" : "No"}
               </td>
               <td>
                 <div className="flex items-center justify-center">
                   <input
-                    className="flex items-center justify-center cursor-pointer"
+                    className="flex items-center justify-center cursor-pointer my-1"
                     type="checkbox"
                     checked={coupon.isActive}
                     onChange={() =>
@@ -94,10 +94,10 @@ const ViewCoupon = ({
                   />
                 </div>
               </td>
-              <td className="flex items-center justify-center">
+              <td className="flex items-center justify-center py-1">
                 <button
                   onClick={() => handleDeleteCoupon(coupon._id)}
-                  className="border-1 px-4 py-1 shadow shadow-lg cursor-pointer rounded bg-blue-300 hover:scale-110 hover:bg-blue-400"
+                  className="border-1 px-4 py-1 shadow shadow-lg cursor-pointer rounded bg-blue-400 hover:scale-110 hover:bg-blue-300"
                 >
                   Delete
                 </button>
