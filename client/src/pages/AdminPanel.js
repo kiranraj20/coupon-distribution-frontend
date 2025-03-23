@@ -45,6 +45,10 @@ const AdminPanel = () => {
     }
   };
 
+  const handleHome = () => {
+    window.location.href = "/";
+  }
+
   // useEffect(() => {
   //   if (accessToken) {
   //     fetchData();
@@ -63,6 +67,12 @@ const AdminPanel = () => {
       <h1 className="text-2xl underline">Admin Panel</h1>
       <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 rounded shadow shadow-xl p-5 bg-gray-50">
         <div className="flex gap-5">
+          <button
+            onClick={handleHome}
+            className="border-1 px-4 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-400 hover:scale-110 hover:bg-blue-300"
+          >
+            Home
+          </button>
           <button
             onClick={logout}
             className="border-1 px-4 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-400 hover:scale-110 hover:bg-blue-300"
