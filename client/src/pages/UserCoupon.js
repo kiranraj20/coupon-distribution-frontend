@@ -3,12 +3,14 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const UserCoupon = () => {
+
+  const API = 'https://coupon-distribution-backend-seven.vercel.app';
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const claimCoupon = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/claim", {
+      const res = await axios.get(`${API}/api/claim`, {
         withCredentials: true,
       });
       setMessage(`Coupon claimed: ${res.data.coupon}`);

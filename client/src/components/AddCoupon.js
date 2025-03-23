@@ -9,11 +9,12 @@ const AddCoupon = ({
   setNewCouponCode,
   fetchData,
 }) => {
+  const API = 'https://coupon-distribution-backend-seven.vercel.app';
   const handleAddCoupon = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/coupons",
+        `${API}/api/coupons`,
         { code: newCouponCode },
         { headers: { Authorization: `Bearer ${accessToken}` } }
       );

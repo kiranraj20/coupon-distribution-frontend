@@ -5,6 +5,7 @@ import AdminPanel from './pages/AdminPanel';
 import UserCoupon from './pages/UserCoupon';
 import { useContext } from 'react';
 
+
 const ProtectedRoute = ({ children }) => {
   const { isAdmin } = useContext(AuthContext);
   return isAdmin ? children : <Navigate to="/login" />;

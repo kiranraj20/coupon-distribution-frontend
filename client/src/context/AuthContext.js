@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [refreshToken, setRefreshToken] = useState(
     sessionStorage.getItem("refreshToken")
   );
+  const API = 'https://coupon-distribution-backend-seven.vercel.app';
 
   // Check token validity and refresh if needed on mount
   useEffect(() => {
@@ -52,7 +53,7 @@ export const AuthProvider = ({ children }) => {
   // Refresh token logic
   const refreshAccessToken = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/refresh", {
+      const res = await axios.post(`${API}/api/admin/refresh`, {
         refreshToken,
       });
       setAccessToken(res.data.accessToken);
@@ -94,7 +95,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     const res = await axios.post(
-      "http://localhost:5000/api/admin/login",
+      `${API}/api/admin/login`,
       credentials
     );
     setAccessToken(res.data.accessToken);
@@ -109,7 +110,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post("http://localhost:5000/api/admin/logout", {
+      await axios.post(`${API}/api/admin/logout`, {
         refreshToken,
       });
     } catch (err) {

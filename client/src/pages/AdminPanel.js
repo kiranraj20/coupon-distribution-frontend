@@ -16,17 +16,19 @@ const AdminPanel = () => {
   const [claimTotalPages, setClaimTotalPages] = useState(1);
   const limit = 5;
 
+  const API = 'https://coupon-distribution-backend-seven.vercel.app';
+
   const fetchData = async () => {
     try {
       const [couponRes, claimRes] = await Promise.all([
         axios.get(
-          `http://localhost:5000/api/coupons?page=${couponPage}&limit=${limit}`,
+          `${API}/api/coupons?page=${couponPage}&limit=${limit}`,
           {
             headers: { Authorization: `Bearer ${accessToken}` },
           }
         ),
         axios.get(
-          `http://localhost:5000/api/claims?page=${claimPage}&limit=${limit}`,
+          `${API}/api/claims?page=${claimPage}&limit=${limit}`,
           {
             headers: { Authorization: `Bearer ${accessToken}` },
           }

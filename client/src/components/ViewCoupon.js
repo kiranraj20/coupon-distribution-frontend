@@ -11,10 +11,11 @@ const ViewCoupon = ({
   couponTotalPages,
   fetchData,
 }) => {
+  const API = 'https://coupon-distribution-backend-seven.vercel.app';
   const handleUpdateCoupon = async (id, updatedCode) => {
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/coupons/${id}`,
+        `${API}/api/coupons/${id}`,
         { code: updatedCode },
         { headers: { Authorization: `Bearer ${accessToken}` } }
       );
