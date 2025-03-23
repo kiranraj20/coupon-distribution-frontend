@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import InstructionPage from "./InstructionPage";
 
 const UserCoupon = () => {
 
@@ -26,8 +27,9 @@ const UserCoupon = () => {
 
   return (
     <div className="flex flex-col gap-5 items-center justify-center min-h-screen bg-blue-50">
+      <InstructionPage />
       <h2 className="text-2xl underline">FREE COUPONS</h2>
-      <div className="flex flex-col gap-5 items-center justify-center border-1 rounded shadow shadow-xl p-20 bg-white-50">
+      <div className="flex flex-col gap-5 items-center justify-center border-1 rounded shadow shadow-xl p-20 bg-gray-50">
         <button
           onClick={handleAdmin}
           className="border-1 px-5 py-2 shadow shadow-lg cursor-pointer rounded bg-blue-400 hover:scale-110 hover:bg-blue-300 w-full"

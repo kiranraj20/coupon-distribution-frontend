@@ -4,6 +4,7 @@ import AdminLogin from './pages/AdminLogin';
 import AdminPanel from './pages/AdminPanel';
 import UserCoupon from './pages/UserCoupon';
 import { useContext } from 'react';
+import Instructions from './components/Instructions';
 
 
 const ProtectedRoute = ({ children }) => {
@@ -13,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
 
 const PublicRoute = ({ children }) => {
   const { isAdmin } = useContext(AuthContext);
-  return isAdmin ? <Navigate to="/admin" /> : children; // Redirect to admin if already logged in
+  return isAdmin ? <Navigate to="/admin" /> : children;
 };
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
             }
           />
           <Route path="/" element={<UserCoupon />} />
+          <Route path="/instructions" element={<Instructions />} />
         </Routes>
       </Router>
     </AuthProvider>

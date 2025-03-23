@@ -27,7 +27,7 @@ const AddCoupon = ({
   };
 
   return (
-    <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 rounded shadow shadow-xl p-5 bg-white-50">
+    <div className="flex flex-col gap-5 items-center justify-center border-1 min-w-1/2 rounded shadow shadow-xl p-5 bg-gray-50">
       <h2 className="text-lg underline">Add Coupon</h2>
       <form onSubmit={handleAddCoupon} className="flex gap-5">
         <input

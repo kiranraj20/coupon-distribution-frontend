@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import InstructionPage from "./InstructionPage";
 
 const AdminLogin = () => {
   const { login } = useContext(AuthContext);
@@ -22,7 +23,8 @@ const AdminLogin = () => {
 
   return (
     <div className="flex flex-col gap-5 items-center justify-center min-h-screen bg-blue-50">
-      <div className="flex flex-col gap-5 items-center justify-center border-1 rounded shadow shadow-xl p-20 bg-white-50">
+      <InstructionPage />
+      <div className="flex flex-col gap-5 items-center justify-center border-1 rounded shadow shadow-xl p-20 bg-gray-50">
         <h2 className="text-lg underline pb-10">Admin Login</h2>
         <form onSubmit={handleLogin} className="flex flex-col gap-5">
           <input
